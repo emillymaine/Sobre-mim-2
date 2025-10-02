@@ -1,0 +1,233 @@
+/* RESET E BASE */
+* { box-sizing: border-box; }
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #111;
+    background: #fff;
+}
+
+/* Se estiver usando sua fonte local */
+@font-face {
+    font-family: "fontex";
+    src: url('../fontes/PlayfairDisplay-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+/* CONTAINER CENTRAL (usa-se em banner e main) */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ------------------- BANNER ------------------- */
+#banner {
+  width: 100%;
+  background: #333333;
+  color: #f8f8f8;
+  padding: 48px 0;
+}
+
+#banner .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap; /* permite empilhar no mobile */
+}
+
+.foto1 {
+  width: 320px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 25px;
+  flex: 0 0 320px; /* largura fixa que pode encolher se necessário */
+}
+
+.dados {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1 1 400px; /* ocupa o resto do espaço */
+  align-items: flex-start;
+}
+
+.sub {
+  font-size: 18px;
+  color: #9E8C6C;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.fonte1 {
+  margin: 0;
+  line-height: 0.9;
+  /* fonte responsiva: entre 40px e 126px dependendo da viewport */
+  font-size: clamp(40px, 8vw, 126px);
+}
+
+.botao {
+  text-decoration: none;
+  background: #f8f8f8;
+  color: #000;
+  padding: 14px 36px;
+  display: inline-block;
+  letter-spacing: 1px;
+  border-radius: 8px;
+  margin-top: 8px;
+  align-self: flex-start;
+}
+
+/* ------------------- MAIN ------------------- */
+.main {
+  width: 100%;
+  background: #e2e2e2;
+  padding: 40px 0;
+}
+
+.main .container {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  flex-wrap: wrap; /* permite empilhar */
+}
+
+.aside {
+  flex: 0 0 320px;   /* largura base do aside */
+  max-width: 320px;
+}
+
+.about {
+  flex: 1 1 600px;   /* ocupa o restante do espaço */
+  min-width: 280px;
+}
+
+.box {
+  background: #fff;
+  padding: 18px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.06);
+}
+
+li {
+  list-style: none;
+  padding: 6px 0;
+}
+
+.a1 {
+  color: #0699a6;
+  text-decoration: none;
+}
+
+/* ------------------- FOOTER ------------------- */
+#footer {
+  width: 100%;
+  background-color: #F5F3F0;
+  padding: 36px 0;
+}
+
+.fest {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  color: black;
+}
+
+.tega {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.fest h2 {
+  font-size: 32px;
+  margin: 0;
+}
+
+.social {
+  color: rgba(6, 153, 166, 1);
+  text-decoration: none;
+  display: inline-block;
+  font-family: "fontex", Arial, sans-serif;
+  margin: 6px 0;
+}
+
+.top {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.top img {
+  width: 30px;
+  height: 30px;
+  display: block;
+}
+
+/* ------------------- MEDIA QUERIES ------------------- */
+
+/* Tablet / layouts intermediários */
+@media (max-width: 1024px) {
+  #banner .container {
+    gap: 20px;
+  }
+  .foto1 {
+    width: 260px;
+    height: 260px;
+    flex: 0 0 260px;
+  }
+  .dados {
+    align-items: center;
+    text-align: center;
+  }
+  .fonte1 {
+    font-size: clamp(36px, 8vw, 80px);
+  }
+  .botao {
+    align-self: center;
+  }
+
+  /* empilhar as colunas do main */
+  .aside, .about {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .foto1 {
+    width: 200px;
+    height: 200px;
+    flex: 0 0 200px;
+  }
+  .fonte1 {
+    font-size: 36px;
+  }
+  .botao {
+    padding: 12px 24px;
+  }
+  .fest h2 {
+    font-size: 24px;
+  }
+  .top img {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* pequeno ajuste em telas muito pequenas */
+@media (max-width: 420px) {
+  .foto1 { width: 160px; height: 160px; flex: 0 0 160px; }
+  .fonte1 { font-size: 28px; }
+  .botao { padding: 10px 16px; }
+}
